@@ -2,6 +2,7 @@ import prisma from '../config/database.js';
 
 // Middleware to verify session token
 export const authenticateToken = async (req, res, next) => {
+  console.log("entered authenticateToken...")
     try {
       const authHeader = req.headers['authorization'];
       if (!authHeader) return res.status(401).json({ error: 'No token provided' });

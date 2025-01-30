@@ -14,15 +14,19 @@ export const getUserDetails = async (req, res) => {
           createdAt: true,
           _count: {
             select: {
-              posts: true,
-              followers: true,
-              following: true
+              posts: true
             }
           }
         }
       });
+
+      if (!user) {
+        return res.status(404).json({ error: 'User not found' });
+      }
+
       res.json(user);
     } catch (error) {
+      console.error('Error in getUserDetails:', error);
       res.status(500).json({ error: 'Error fetching user details' });
     }
   }

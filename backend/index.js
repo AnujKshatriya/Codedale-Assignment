@@ -18,7 +18,7 @@ app.use(express.json());
 app.get('/api/user/details', authenticateToken, getUserDetails);
 
 // 2. Get all posts by a user with likes
-app.get('/api/user/:userId/posts', authenticateToken, getPostDetails);
+app.get('/api/posts/:userId', authenticateToken, getPostDetails);
 
 // 3. Get complete poll details
 app.get('/api/poll/:pollId', authenticateToken, getPollDetails);

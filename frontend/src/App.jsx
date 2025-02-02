@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 
-const API_BASE_URL = "http://localhost:3000/api";
+const API_BASE_URL = "https://codedale-assignment.onrender.com/api";
 
 export default function DataFetcher() {
   const [userId, setUserId] = useState("");
